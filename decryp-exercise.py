@@ -31,8 +31,9 @@ for l in crypt:
 
 #Letter patterns
 patterns={}
-
-for sublen in range(2,int(len(cryptStr)/2)):
+minLen = 5
+minCont = 2
+for sublen in range(minLen,int(len(cryptStr)/minCont)):
     for i in range(0,len(cryptStr)-sublen):
         sub = cryptStr[i:i+sublen]
         cnt = cryptStr.count(sub)
@@ -44,14 +45,14 @@ for sublen in range(2,int(len(cryptStr)/2)):
 test_crypt: list = []
 
 for i in crypt:
-    if(i == ''):               
-       test_crypt.append('')
-    elif(i == ''):
-       test_crypt.append('')
-    elif(i == ''):             
-       test_crypt.append('') 
-    elif(i == ''):             
-        test_crypt.append('')  
+    if(i == 'X'):               
+       test_crypt.append('j')
+    elif(i == 'W'):             
+       test_crypt.append('a') 
+    elif(i == 'C'):             
+        test_crypt.append('m')
+    elif(i == 'S'):             
+        test_crypt.append('e') 
     else:                                 
         test_crypt.append(i)
 
@@ -64,5 +65,5 @@ print(sorted(letter_histogram, key=letter_histogram.__getitem__))
 print("\n____________________Letter Patterns____________________\n")
 print(sorted(patterns, key=patterns.__getitem__))
 print("\n____________________Replacement Decryption____________________\n")
-#print(decrypt)
+print(decrypt)
 
